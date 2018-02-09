@@ -1,0 +1,25 @@
+Properties values
+ . operator
+ [] square brackets - is evalutated inside [1+1]
+ (e.g. value[x]  or [2-1] for properties)
+ 
+Arrays
+
+push/pop 
+join("<Filler material>")
+splice(remove/add elements) (index, 1/0 insert/remove, object)
+
+Strings
+
+Strings are bound by single quotes
+newline/quotations/backslashes
++ for concat
+toUpper = new string
+'cat'[0] returns the first character
+
+Objects
+var asdf = {}
+= will assign or create value
+delete is a unary operator
+in - checks if object has property
+
