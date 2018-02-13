@@ -1,0 +1,11 @@
+Destructuring
+Default Values
+Template Literals
+
+ES6 Classes
+	extends, super
+	getters, setter
+
+Chaining Classes
+	need to return this
+		in order to chain

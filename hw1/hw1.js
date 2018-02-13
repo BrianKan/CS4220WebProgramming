@@ -206,21 +206,6 @@ console.log('inverseCase: ', inverseCase(str))
 
 
 // Question 2 
-function getCharacterFrequency(string) {
-
-    let obj = {}
-
-    for (i = 0; i < string.length; i++) {
-        if (obj[string[i]] == null) {
-            obj[string[i]] = 1;
-        }
-        else {
-            obj[string[i]]++
-        }
-    }
-    return obj
-}
-
 function getCFrequency(string) {
 
     let obj = {}
@@ -236,9 +221,25 @@ function getCFrequency(string) {
     return obj
 }
 
+function getCharacterFrequency(string) {
+
+    let obj = {}
+    let capped=upperCase(string)
+//Babble
+    for (i = 0; i < capped.length; i++) {
+        if (obj[capped[i]] == null) {
+            obj[capped[i]] = 1;
+        }
+        else {
+            obj[capped[i]]++
+        }
+    }
+    return obj
+}
+
 function printCharacterFrequency(object) {
     for (let property in object) {
-        console.log("'" + property + "' occurs " + object[property] + " times")
+        console.log("'" + property + "' occurs " + object[property] + " times.")
     }
 }
 
