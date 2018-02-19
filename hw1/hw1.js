@@ -118,17 +118,26 @@ function inverseCapCase(string) {
 }
 
 function titleCase(string, lowercaseWords) {
-    let resultingString = string.split(" ")
-    for (index in resultingString) {
-        if (findInArray(resultingString[index], lowercaseWords)) {
-            resultingString.splice(index, 1, lowerCase(resultingString[index]))
+    let sentenceStrings = string.split(". ")
+    for (indexes in sentenceStrings) {
+        let resultingString = sentenceStrings[indexes].split(" ")
+        for (index in resultingString) {
+            if(index==0){
+                resultingString.splice(index, 1, capCase(resultingString[index]))
+            }
+            else if (findInArray(resultingString[index], lowercaseWords)) {
+                resultingString.splice(index, 1, lowerCase(resultingString[index]))
+            }
+            else {
+                resultingString.splice(index, 1, capCase(resultingString[index]))
+            }
         }
-        else {
-            resultingString.splice(index, 1, capCase(resultingString[index]))
-        }
+        sentenceStrings[indexes]=resultingString.join(" ")
     }
-    return resultingString.join(" ")
+    
+    return sentenceStrings.join(". ")
 }
+
 
 function sentenceCase(string, unconditionallyCapitalized) {
     let resultingString = string.split(" ")
@@ -195,13 +204,13 @@ let str = 'I watched the storm, so beautiful yet terrific. The face of the moon 
 let unconditionallyCapitalized = ['I', 'Moon', 'Shadow']
 let lowercaseWords = ['the', 'of', 'in', 'an']
 
-console.log('upperCase: ', upperCase(str))
-console.log('lowerCase: ', lowerCase(str))
-console.log('sentenceCase: ', sentenceCase(str, unconditionallyCapitalized))
-console.log('capitalizedCase: ', capitalizedCase(str))
-console.log('alternatingCase: ', alternatingCase(str))
-console.log('titleCase: ', titleCase(str, lowercaseWords))
-console.log('inverseCase: ', inverseCase(str))
+console.log('upperCase:', upperCase(str))
+console.log('lowerCase:', lowerCase(str))
+console.log('sentenceCase:', sentenceCase(str, unconditionallyCapitalized))
+console.log('capitalizedCase:', capitalizedCase(str))
+console.log('alternatingCase:', alternatingCase(str))
+console.log('titleCase:', titleCase(str, lowercaseWords))
+console.log('inverseCase:', inverseCase(str))
 // } 
 
 
@@ -224,8 +233,8 @@ function getCFrequency(string) {
 function getCharacterFrequency(string) {
 
     let obj = {}
-    let capped=upperCase(string)
-//Babble
+    let capped = upperCase(string)
+    //Babble
     for (i = 0; i < capped.length; i++) {
         if (obj[capped[i]] == null) {
             obj[capped[i]] = 1;

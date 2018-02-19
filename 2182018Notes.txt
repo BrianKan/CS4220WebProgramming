@@ -1,0 +1,32 @@
+Timing methods
+
+setTimeout() - wait
+setInterval() - repeat
+clearInterval() - clears a set Interval
+
+Callbacks - passed to other functions
+Promises - object that takes Callback
+	3 pending states
+	pending - initial state
+	fulfilled - done
+	rejected - failed
+Promise.all(iterable) 
+
+Node File I/O and HTTP/HTTPS modules
+
+Javascript is single-threaded
+Event loop
+--------------------
+ The Call Stack - One Thread = One Thing at a Time
+if stack empty
+	push taskQueue onto Stack
+SetTimeout = 0 => Push to the end of the stack
+
+Promise(resolve,reject)
+	promises chain
+	.then for the result
+	.catch for the rejection
+Promise.all -> pass in array of objects
+	The order will not be returned
+Just gets until error hit
+Callback(err,result)
